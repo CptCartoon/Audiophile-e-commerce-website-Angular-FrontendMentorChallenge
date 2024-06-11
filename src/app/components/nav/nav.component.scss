@@ -1,0 +1,60 @@
+nav {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-container {
+  margin: auto;
+  background-color: black; // temporary
+  padding: 2rem 2rem;
+
+  &__nav-wrapper {
+    margin: auto;
+    max-width: 1110px;
+    display: flex;
+    justify-content: space-between;
+
+    &__cart-button {
+      background-image: url("../../../assets/shared/desktop/icon-cart.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 24px;
+      height: 24px;
+      background-color: unset;
+      border: unset;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__menu {
+      max-width: 427px;
+
+      ul {
+        display: flex;
+        flex-direction: row;
+
+        .nav-link {
+          list-style-type: none;
+          justify-content: space-between;
+          align-items: center;
+
+          a {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-right: 2rem;
+            transition: 0.2s;
+
+            &:hover {
+              color: orange;
+            }
+          }
+        }
+      }
+    }
+  }
+}
