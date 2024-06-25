@@ -1,6 +1,9 @@
 <nav>
   <div class="nav-container">
     <div class="nav-container__nav-wrapper">
+      <div class="nav-container__nav-wrapper__nav-hamburger">
+        <button class="hamburger-button"></button>
+      </div>
       <div class="nav-container__nav-wrapper__logo">
         <a href=""
           ><img
@@ -17,16 +20,19 @@
           <li class="nav-link"><a href="">EARPHONES</a></li>
         </ul>
       </div>
-      <button class="nav-container__nav-wrapper__cart-button"></button>
+      <div class="nav-container__nav-wrapper__cart-container">
+        <button (click)="openCart()" class="cart-button"></button>
+        <app-cart *ngIf="showCart"></app-cart>
+      </div>
     </div>
   </div>
 </nav>
-
+<div (click)="openCart()" *ngIf="showCart" class="backdrop"></div>
 <!-- <a href="" class="btn btn-default-1">SEE PRODUCT</a>
 <a href="" class="btn btn-default-2">SEE PRODUCT</a>
-<a href="" class="btn btn-default-3">SHOP</a>
+<a href="" class="btn btn-default-3">SHOP</a> -->
 
-<input class="input" placeholder="placeholder" type="email" />
+<!-- <input class="input" placeholder="placeholder" type="email" />
 
 <label class="label-radio"
   >e-Money

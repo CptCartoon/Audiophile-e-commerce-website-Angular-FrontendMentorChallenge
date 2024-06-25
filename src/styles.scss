@@ -1,12 +1,4 @@
-// ### COLOR VARIABLES
-
-$darkOrange: #d87d4a;
-$lightBlack: #101010;
-$lightGrey: #f1f1f1;
-$dirtyWhite: #fafafa;
-$lightOrange: #fbaf85;
-$white: #ffffff;
-$black: #000000;
+@import "assets/styles/variables.scss";
 
 * {
   font-family: "Manrope", sans-serif;
@@ -115,57 +107,6 @@ dd {
 }
 
 // ### BUTTON CLASSES
-
-.btn {
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  padding: 15px 30px;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btn-default-1 {
-  color: white;
-  border: solid 1px $darkOrange;
-  background-color: $darkOrange;
-
-  &:hover {
-    border: solid 1px $lightOrange;
-    background-color: $lightOrange;
-  }
-}
-
-.btn-default-2 {
-  color: black;
-  border: solid 1px $black;
-  background-color: unset;
-
-  &:hover {
-    color: $white;
-    background-color: $black;
-  }
-}
-
-.btn-default-3 {
-  color: #808080;
-
-  &::after {
-    content: url("assets/shared/desktop/icon-arrow-right.svg");
-    position: relative;
-    left: 11px;
-    top: 2px;
-  }
-
-  &:hover {
-    color: $darkOrange;
-  }
-}
 
 // ### FORMS ELEMENTS
 

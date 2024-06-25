@@ -102,57 +102,6 @@ dd {
   color: #000000;
 }
 
-.btn {
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  padding: 15px 30px;
-  font-size: 13px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.btn-default-1 {
-  color: white;
-  border: solid 1px #d87d4a;
-  background-color: #d87d4a;
-}
-
-.btn-default-1:hover {
-  border: solid 1px #fbaf85;
-  background-color: #fbaf85;
-}
-
-.btn-default-2 {
-  color: black;
-  border: solid 1px #000000;
-  background-color: unset;
-}
-
-.btn-default-2:hover {
-  color: #ffffff;
-  background-color: #000000;
-}
-
-.btn-default-3 {
-  color: #808080;
-}
-
-.btn-default-3::after {
-  content: url("assets/shared/desktop/icon-arrow-right.svg");
-  position: relative;
-  left: 11px;
-  top: 2px;
-}
-
-.btn-default-3:hover {
-  color: #d87d4a;
-}
-
 .input {
   font-size: 14px;
   font-weight: bold;

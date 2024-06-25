@@ -1,3 +1,5 @@
+@import "../../../assets/styles/variables.scss";
+
 nav {
   width: 100%;
   margin: 0;
@@ -6,7 +8,7 @@ nav {
 
 .nav-container {
   margin: auto;
-  background-color: black; // temporary
+  background-color: $black; // temporary
   padding: 2rem 2rem;
 
   &__nav-wrapper {
@@ -15,7 +17,11 @@ nav {
     display: flex;
     justify-content: space-between;
 
-    &__cart-button {
+    &__nav-hamburger {
+      display: none;
+    }
+
+    .cart-button {
       background-image: url("../../../assets/shared/desktop/icon-cart.svg");
       background-position: center;
       background-repeat: no-repeat;
@@ -26,6 +32,17 @@ nav {
 
       &:hover {
         cursor: pointer;
+      }
+    }
+
+    &__cart-container {
+      position: relative;
+
+      app-cart {
+        position: absolute;
+        z-index: 5;
+        top: 84px;
+        right: 0;
       }
     }
 
@@ -57,4 +74,59 @@ nav {
       }
     }
   }
+}
+
+@media screen and (max-width: 690px) {
+  .nav-container {
+    &__nav-wrapper {
+      &__nav-hamburger {
+        display: block;
+        .hamburger-button {
+          background-image: url("../../../assets/home/mobile/hamburger.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          width: 24px;
+          height: 24px;
+          background-color: unset;
+          border: unset;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__menu {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .nav-container {
+    &__nav-wrapper {
+      &__cart-container {
+        position: static;
+
+        app-cart {
+          position: absolute;
+          z-index: 5;
+          right: unset;
+          top: 116px;
+          left: 50%;
+          transform: translate(-50%);
+        }
+      }
+    }
+  }
+}
+
+.backdrop {
+  position: absolute;
+  z-index: 2;
+  background-color: black;
+  opacity: 0.4;
+  width: 100%;
+  height: calc(100dvh - 94px);
 }
