@@ -1,0 +1,41 @@
+@import "../../../styles.scss";
+
+.header-container {
+  background-color: $mainHeaderBackground;
+  padding: 0 2rem;
+  height: 729px;
+
+  &__header-wrapper {
+    max-width: 1110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+
+    &__hero-img {
+      margin-right: -120px;
+      img {
+      }
+    }
+
+    &__header-text-content {
+      max-width: 398px;
+
+      .overline {
+        color: #898989;
+      }
+
+      .h1 {
+        color: $white;
+        margin-top: 1.5rem;
+      }
+
+      .bodytext {
+        color: #c4c4c4;
+        max-width: 349px;
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

@@ -8,13 +8,14 @@ nav {
 
 .nav-container {
   margin: auto;
-  background-color: $black; // temporary
-  padding: 2rem 2rem;
+  padding: 0rem 2rem;
 
   &__nav-wrapper {
     margin: auto;
     max-width: 1110px;
     display: flex;
+    padding: 2rem 0rem;
+    border-bottom: 1px solid #414141;
     justify-content: space-between;
 
     &__nav-hamburger {
@@ -111,7 +112,7 @@ nav {
 
         app-cart {
           position: absolute;
-          z-index: 5;
+          z-index: 1000;
           right: unset;
           top: 116px;
           left: 50%;
