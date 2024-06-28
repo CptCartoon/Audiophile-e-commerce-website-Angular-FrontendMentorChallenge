@@ -48,20 +48,6 @@
   }
 }
 
-@media screen and (max-width: 1040px) {
-  .header-container {
-    background-color: $mainHeaderBackground;
-    padding: 0 2rem;
-    height: 729px;
-
-    &__header-wrapper {
-      &__hero-img {
-        margin-right: -40px;
-      }
-    }
-  }
-}
-
 @media screen and (max-width: 960px) {
   .header-container {
     background-image: url("../../../assets/home/desktop/image-hero-headphones.png");

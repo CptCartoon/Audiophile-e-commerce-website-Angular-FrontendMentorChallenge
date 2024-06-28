@@ -1,0 +1,47 @@
+@import url("../../../assets/styles/variables.scss");
+@import url("../button/button.component.scss");
+
+.link-container {
+  max-width: 350px;
+
+  &__link-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 350px;
+
+    &:hover {
+      cursor: pointer;
+      .link-img {
+        top: 10px;
+      }
+    }
+
+    &__link-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      top: 20px;
+      transform: translate(-50%, -50%);
+      transition: 0.2s;
+
+      img {
+        max-height: 220px;
+      }
+    }
+
+    &__link-text-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 350px;
+      background-color: #f1f1f1;
+      padding: 116px 48px 15px 48px;
+      border-radius: 8px;
+    }
+  }
+}
