@@ -3,6 +3,8 @@
 
 .link-container {
   max-width: 350px;
+  min-width: 223px;
+  width: 100%;
 
   &__link-wrapper {
     position: relative;
@@ -10,7 +12,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 350px;
 
     &:hover {
       cursor: pointer;
@@ -47,9 +48,33 @@
       background-color: #f1f1f1;
       padding: 116px 48px 15px 48px;
       border-radius: 8px;
+      transition: 0.2s;
     }
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 771px) {
+  .link-container {
+    &__link-wrapper {
+      &:hover {
+        cursor: pointer;
+
+        app-button {
+          color: $darkOrange !important;
+        }
+
+        .link-img {
+          top: -10px;
+        }
+      }
+
+      &__link-img {
+        top: 0px;
+      }
+
+      &__link-text-content {
+        padding-top: 88px;
+      }
+    }
+  }
 }

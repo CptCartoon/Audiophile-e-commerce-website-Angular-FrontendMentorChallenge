@@ -9,8 +9,31 @@
     justify-content: space-between;
     align-items: center;
 
+    app-category-link {
+      max-width: 350px;
+      width: 100%;
+    }
+
     app-category-link:not(:last-child) {
       margin-right: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 771px) {
+  .category-container {
+    &__category-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      app-category-link:not(:last-child) {
+        margin-right: unset;
+      }
+
+      app-category-link:not(:first-child) {
+        margin-top: 138px;
+      }
     }
   }
 }
