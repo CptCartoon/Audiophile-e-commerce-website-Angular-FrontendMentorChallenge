@@ -1,5 +1,5 @@
-@import url("../../../assets/styles/variables.scss");
-@import url("../button/button.component.scss");
+@import "../../../assets/styles/variables.scss";
+@import "../button/button.component.scss";
 
 .link-container {
   max-width: 350px;
@@ -10,10 +10,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    max-width: 350px;
+    width: 350px;
 
     &:hover {
       cursor: pointer;
+
+      app-button {
+        color: $darkOrange !important;
+      }
+
       .link-img {
         top: 10px;
       }
@@ -38,10 +43,13 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      width: 350px;
+      width: 100%;
       background-color: #f1f1f1;
       padding: 116px 48px 15px 48px;
       border-radius: 8px;
     }
   }
+}
+
+@media screen and (max-width: 1200px) {
 }

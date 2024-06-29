@@ -1,0 +1,16 @@
+.category-container {
+  padding: 0 2rem;
+  margin-top: 230px;
+  &__category-wrapper {
+    max-width: 1110px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    app-category-link:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}

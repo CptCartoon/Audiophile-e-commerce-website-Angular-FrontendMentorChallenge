@@ -11,4 +11,5 @@ export class ButtonComponent {
   @Input() btnLabel!: string;
   @Input() btnLink!: string;
   @Input() className: string = 'btn-default-1';
+  @Input() hover: boolean = false;
 }

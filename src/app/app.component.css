@@ -2,3 +2,7 @@ app-nav {
   position: absolute;
   width: 100%;
 }
+
+body {
+  background-color: #fafafafa;
+}

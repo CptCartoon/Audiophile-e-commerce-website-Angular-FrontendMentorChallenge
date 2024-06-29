@@ -1,0 +1,17 @@
+.category-container {
+  padding: 0 2rem;
+  margin-top: 230px;
+}
+
+.category-container__category-wrapper {
+  max-width: 1110px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-container__category-wrapper app-category-link:not(:last-child) {
+  margin-right: 1rem;
+}
