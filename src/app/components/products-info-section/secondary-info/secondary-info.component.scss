@@ -5,13 +5,14 @@
   border-radius: 8px;
   &__secondary-info-wrapper {
     padding: 101px 0 101px 95px;
-
+    transition: 0.2s;
     &__text-content {
       .text-h2 {
         font-size: 28px;
         color: black;
         letter-spacing: 2px;
         margin-bottom: 32px;
+        transition: 0.2s;
       }
 
       app-button {
