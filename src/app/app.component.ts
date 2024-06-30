@@ -5,6 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { CategoryLinkComponent } from './components/category-link/category-link.component';
 import { CategorySectionComponent } from './components/category-section/category-section.component';
 import { MainInfoComponent } from './components/products-info-section/main-info/main-info.component';
+import { ProductsInfoSectionComponent } from './components/products-info-section/products-info-section.component';
 
 @Component({
   selector: 'app-root',
@@ -18,6 +19,7 @@ import { MainInfoComponent } from './components/products-info-section/main-info/
     CategoryLinkComponent,
     CategorySectionComponent,
     MainInfoComponent,
+    ProductsInfoSectionComponent,
   ],
 })
 export class AppComponent {

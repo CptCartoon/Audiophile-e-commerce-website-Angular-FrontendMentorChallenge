@@ -3,30 +3,29 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 8px;
-  &__secondary-info-wrapper {
-    padding: 101px 0 101px 95px;
+}
 
-    &__text-content {
-      .text-h2 {
-        font-size: 28px;
-        color: black;
-        letter-spacing: 2px;
-        margin-bottom: 32px;
-      }
+.secondary-info-container__secondary-info-wrapper {
+  padding: 101px 0 101px 95px;
+}
 
-      app-button {
-        display: inline-block;
-      }
-    }
-  }
+.secondary-info-container__secondary-info-wrapper__text-content .text-h2 {
+  font-size: 28px;
+  color: black;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+
+.secondary-info-container__secondary-info-wrapper__text-content app-button {
+  display: inline-block;
 }
 
 @media screen and (max-width: 920px) {
   .secondary-info-container {
     background-image: url("../../../../assets/home/tablet/image-speaker-zx7_tablet.jpg");
-    &__secondary-info-wrapper {
-      padding: 101px 0 101px 62px;
-    }
+  }
+  .secondary-info-container__secondary-info-wrapper {
+    padding: 101px 0 101px 62px;
   }
 }
 
@@ -34,8 +33,8 @@
   .secondary-info-container {
     background-image: url("../../../../assets/home/mobile/image-speaker-zx7_mobile.jpg");
     background-size: 100%;
-    &__secondary-info-wrapper {
-      padding: 101px 0 101px 24px;
-    }
+  }
+  .secondary-info-container__secondary-info-wrapper {
+    padding: 101px 0 101px 24px;
   }
 }
