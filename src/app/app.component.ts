@@ -4,6 +4,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { CategoryLinkComponent } from './components/category-link/category-link.component';
 import { CategorySectionComponent } from './components/category-section/category-section.component';
+import { MainInfoComponent } from './components/products-info-section/main-info/main-info.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { CategorySectionComponent } from './components/category-section/category
     HeaderComponent,
     CategoryLinkComponent,
     CategorySectionComponent,
+    MainInfoComponent,
   ],
 })
 export class AppComponent {

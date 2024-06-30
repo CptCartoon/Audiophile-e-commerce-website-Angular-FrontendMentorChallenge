@@ -1,0 +1,116 @@
+@import "../../../../assets/styles/variables.scss";
+
+.main-info-container {
+  background-color: $darkOrange;
+  border-radius: 8px;
+  max-width: 1110px;
+  background-image: url("../../../../assets/home/desktop/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-position-x: -145px;
+  transition: 0.2s;
+
+  &__main-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 133px 95px 124px 95px;
+    overflow: hidden;
+    max-height: 560px;
+    transition: 0.2s;
+
+    &__main-img {
+      margin-bottom: -140px;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+        //position: absolute;
+
+        //height: 100%;
+      }
+    }
+    &__text-content {
+      max-width: 350px;
+      margin-left: 1rem;
+
+      h1 {
+        color: $white;
+      }
+
+      p {
+        color: $white;
+        margin-top: 24px;
+        margin-bottom: 40px;
+      }
+
+      app-button {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .main-info-container {
+    background-repeat: no-repeat;
+    background-position-y: -320px;
+    background-position-x: center;
+    max-width: 690px;
+
+    &__main-info-wrapper {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 52px 170px 64px 170px;
+      max-height: 720px;
+
+      overflow: visible;
+
+      &__main-img {
+        margin-bottom: 64px;
+        text-align: center;
+
+        img {
+          max-height: 200px;
+          max-width: 100%;
+        }
+      }
+      &__text-content {
+        max-width: 350px;
+        margin-bottom: unset;
+        margin-left: unset;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main-info-container {
+    &__main-info-wrapper {
+      padding: 52px 24px 55px 24px;
+
+      overflow: visible;
+
+      &__main-img {
+        margin-bottom: 64px;
+        text-align: center;
+
+        img {
+          max-height: 180px;
+          max-width: 100%;
+        }
+      }
+      &__text-content {
+        max-width: 350px;
+        margin-bottom: unset;
+        margin-left: unset;
+        text-align: center;
+
+        h1 {
+          font-size: 36px;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+}
