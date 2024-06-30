@@ -8,7 +8,7 @@
   margin: auto;
 }
 
-.product-info-container__product-info-wrapper app-secondary-info,
-.product-info-container__product-info-wrapper app-tertiary-info {
-  margin-top: 32px;
+app-secondary-info,
+app-tertiary-info {
+  margin: 32px !important;
 }

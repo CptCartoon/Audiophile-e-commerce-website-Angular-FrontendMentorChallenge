@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { ButtonComponent } from '../../button/button.component';
 
 @Component({
   selector: 'app-tertiary-info',
   standalone: true,
-  imports: [],
   templateUrl: './tertiary-info.component.html',
   styleUrl: './tertiary-info.component.scss',
+  imports: [ButtonComponent],
 })
 export class TertiaryInfoComponent {}

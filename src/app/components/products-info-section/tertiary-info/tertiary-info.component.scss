@@ -1,0 +1,79 @@
+@import "../../../../assets/styles/variables.scss";
+
+.tertiary-info-container {
+  max-height: 540px;
+  &__tertiary-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 1;
+
+    &__photo {
+      background-image: url("../../../../assets/home/desktop/image-earphones-yx1.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 8px;
+      max-width: 540px;
+      width: 50%;
+      height: 320px;
+      flex-grow: 1;
+    }
+
+    &__text-content {
+      background-color: $lightGrey;
+      padding: 101px 12px 101px 95px;
+      border-radius: 8px;
+      margin-left: 30px;
+      max-width: 540px;
+      width: 50%;
+      flex-grow: 2;
+      .text-h2 {
+        font-size: 28px;
+        letter-spacing: 2px;
+        margin-bottom: 32px;
+      }
+
+      app-button {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  .tertiary-info-container {
+    &__tertiary-info-wrapper {
+      &__photo {
+        background-image: url("../../../../assets/home/tablet/image-earphones-yx1_tablet.jpg");
+      }
+
+      &__text-content {
+        margin-left: 11px;
+        padding: 101px 12px 101px 41px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .tertiary-info-container {
+    &__tertiary-info-wrapper {
+      flex-direction: column;
+
+      &__photo {
+        background-image: url("../../../../assets/home/mobile/image-earphones-yx1_mobile.jpg");
+        max-width: unset;
+        width: 100%;
+        max-height: 200px;
+      }
+
+      &__text-content {
+        margin-left: unset;
+        margin-top: 24px;
+        padding: 41px 12px 41px 24px;
+        max-width: unset;
+        width: 100%;
+      }
+    }
+  }
+}

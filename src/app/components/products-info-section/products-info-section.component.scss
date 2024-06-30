@@ -5,10 +5,10 @@
   &__product-info-wrapper {
     max-width: 1110px;
     margin: auto;
-
-    app-secondary-info,
-    app-tertiary-info {
-      margin-top: 32px;
-    }
   }
+}
+
+app-secondary-info,
+app-tertiary-info {
+  margin: 32px !important;
 }

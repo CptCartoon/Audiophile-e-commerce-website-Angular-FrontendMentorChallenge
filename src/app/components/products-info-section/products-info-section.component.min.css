@@ -1,1 +1,1 @@
-.product-info-container{padding:0 2rem;margin-top:96px}.product-info-container__product-info-wrapper{max-width:1110px;margin:auto}.product-info-container__product-info-wrapper app-secondary-info,.product-info-container__product-info-wrapper app-tertiary-info{margin-top:32px}
+.product-info-container{padding:0 2rem;margin-top:96px}.product-info-container__product-info-wrapper{max-width:1110px;margin:auto}app-secondary-info,app-tertiary-info{margin:32px !important}
