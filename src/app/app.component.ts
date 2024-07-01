@@ -7,6 +7,7 @@ import { CategorySectionComponent } from './components/category-section/category
 import { MainInfoComponent } from './components/products-info-section/main-info/main-info.component';
 import { ProductsInfoSectionComponent } from './components/products-info-section/products-info-section.component';
 import { AboutSectionComponent } from './components/about-section/about-section.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -22,6 +23,7 @@ import { AboutSectionComponent } from './components/about-section/about-section.
     MainInfoComponent,
     ProductsInfoSectionComponent,
     AboutSectionComponent,
+    FooterComponent,
   ],
 })
 export class AppComponent {
