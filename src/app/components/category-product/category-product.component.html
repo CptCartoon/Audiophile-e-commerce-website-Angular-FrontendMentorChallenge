@@ -1,0 +1,21 @@
+<div class="category-product-container">
+  <div class="category-product-container__category-product-wrapper">
+    <div
+      [ngStyle]="{ order: textLeft ? '2' : '1' }"
+      class="category-product-container__category-product-wrapper__product-photo"
+    ></div>
+    <div
+      [ngStyle]="{ order: textLeft ? '1' : '2' }"
+      class="category-product-container__category-product-wrapper__text-content"
+    >
+      <p class="overline" *ngIf="newProduct">NEW PRODUCT</p>
+      <h2 class="h2">XX99 Mark II Headphones</h2>
+      <p class="bodytext">
+        The new XX99 Mark II headphones is the pinnacle of pristine audio. It
+        redefines your premium headphone experience by reproducing the balanced
+        depth and precision of studio-quality sound.
+      </p>
+      <app-button btnLabel="SEE PRODUCT" className="btn-default-1"></app-button>
+    </div>
+  </div>
+</div>

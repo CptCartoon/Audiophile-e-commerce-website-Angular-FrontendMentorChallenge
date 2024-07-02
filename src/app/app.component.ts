@@ -8,6 +8,7 @@ import { MainInfoComponent } from './components/products-info-section/main-info/
 import { ProductsInfoSectionComponent } from './components/products-info-section/products-info-section.component';
 import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { CategoryProductComponent } from './components/category-product/category-product.component';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProductsInfoSectionComponent,
     AboutSectionComponent,
     FooterComponent,
+    CategoryProductComponent,
   ],
 })
 export class AppComponent {
