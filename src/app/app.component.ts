@@ -9,6 +9,8 @@ import { ProductsInfoSectionComponent } from './components/products-info-section
 import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryProductComponent } from './components/category-product/category-product.component';
+import { ProductLikeComponent } from './components/also-like-section/product-like/product-like.component';
+import { AlsoLikeSectionComponent } from './components/also-like-section/also-like-section.component';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +28,8 @@ import { CategoryProductComponent } from './components/category-product/category
     AboutSectionComponent,
     FooterComponent,
     CategoryProductComponent,
+    ProductLikeComponent,
+    AlsoLikeSectionComponent,
   ],
 })
 export class AppComponent {
