@@ -12,6 +12,7 @@ import { CategoryProductComponent } from './components/category-product/category
 import { ProductLikeComponent } from './components/also-like-section/product-like/product-like.component';
 import { AlsoLikeSectionComponent } from './components/also-like-section/also-like-section.component';
 import { ProductDescriptionComponent } from './components/product-description/product-description.component';
+import { ProductGalleryComponent } from './components/product-gallery/product-gallery.component';
 
 @Component({
   selector: 'app-root',
@@ -32,6 +33,7 @@ import { ProductDescriptionComponent } from './components/product-description/pr
     ProductLikeComponent,
     AlsoLikeSectionComponent,
     ProductDescriptionComponent,
+    ProductGalleryComponent,
   ],
 })
 export class AppComponent {
