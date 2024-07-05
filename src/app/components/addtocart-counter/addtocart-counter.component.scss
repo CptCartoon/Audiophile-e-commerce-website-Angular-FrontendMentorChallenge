@@ -1,0 +1,48 @@
+@import "../../../assets/styles/variables.scss";
+
+.counter-container {
+  &__counter-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    input {
+      height: 50px;
+      width: 24px;
+      border: unset;
+      background-color: $lightGrey;
+      color: black;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: bold;
+      text-align: center;
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .btn-counter {
+      //   padding: 16px;
+      height: 50px;
+      width: 48px;
+      background-color: $lightGrey;
+      border: unset;
+      font-size: 20px;
+      font-weight: bold;
+      color: #b5b5b5;
+      transition: 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        color: $darkOrange;
+      }
+    }
+  }
+}

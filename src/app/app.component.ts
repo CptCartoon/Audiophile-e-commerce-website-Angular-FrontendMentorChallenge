@@ -13,6 +13,7 @@ import { ProductLikeComponent } from './components/also-like-section/product-lik
 import { AlsoLikeSectionComponent } from './components/also-like-section/also-like-section.component';
 import { ProductDescriptionComponent } from './components/product-description/product-description.component';
 import { ProductGalleryComponent } from './components/product-gallery/product-gallery.component';
+import { ProductTopSectionComponent } from './components/product-top-section/product-top-section.component';
 
 @Component({
   selector: 'app-root',
@@ -34,6 +35,7 @@ import { ProductGalleryComponent } from './components/product-gallery/product-ga
     AlsoLikeSectionComponent,
     ProductDescriptionComponent,
     ProductGalleryComponent,
+    ProductTopSectionComponent,
   ],
 })
 export class AppComponent {
