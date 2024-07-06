@@ -20,6 +20,16 @@ nav {
 
     &__nav-hamburger {
       display: none;
+
+      &__mobile-container {
+        position: relative;
+        app-mobile-menu {
+          position: absolute;
+          z-index: 5;
+          top: 55px;
+          left: 0;
+        }
+      }
     }
 
     .cart-button {
@@ -107,6 +117,19 @@ nav {
 @media screen and (max-width: 450px) {
   .nav-container {
     &__nav-wrapper {
+      &__nav-hamburger {
+        &__mobile-container {
+          position: static;
+          app-mobile-menu {
+            position: absolute;
+            z-index: 1000;
+            left: 0;
+            right: 0;
+            top: 96px;
+          }
+        }
+      }
+
       &__cart-container {
         position: static;
 
@@ -129,5 +152,5 @@ nav {
   background-color: black;
   opacity: 0.4;
   width: 100%;
-  height: calc(100dvh - 94px);
+  height: calc(100% - 94px);
 }

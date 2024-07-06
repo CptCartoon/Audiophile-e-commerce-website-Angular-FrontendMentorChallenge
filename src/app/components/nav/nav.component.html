@@ -2,7 +2,12 @@
   <div class="nav-container">
     <div class="nav-container__nav-wrapper">
       <div class="nav-container__nav-wrapper__nav-hamburger">
-        <button class="hamburger-button"></button>
+        <button (click)="openMenu()" class="hamburger-button"></button>
+        <div
+          class="nav-container__nav-wrapper__nav-hamburger__mobile-container"
+        >
+          <app-mobile-menu *ngIf="showMenu"></app-mobile-menu>
+        </div>
       </div>
       <div class="nav-container__nav-wrapper__logo">
         <a href=""

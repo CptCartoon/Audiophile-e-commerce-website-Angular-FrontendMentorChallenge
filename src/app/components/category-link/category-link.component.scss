@@ -78,3 +78,39 @@
     }
   }
 }
+
+// FOR MOBILE MENU
+
+@media screen and (max-width: 690px) {
+  .mobile-menu {
+    .link-container {
+      max-width: 327px;
+      width: 100%;
+      background-color: black;
+    }
+
+    .link-container__link-wrapper {
+      &:hover {
+        .link-img {
+          top: 10px;
+        }
+      }
+
+      &__link-text-content {
+        padding-top: 78px;
+      }
+    }
+
+    .link-img {
+      top: 20px;
+    }
+
+    img {
+      max-height: 150px;
+    }
+
+    h6 {
+      font-size: 15px;
+    }
+  }
+}

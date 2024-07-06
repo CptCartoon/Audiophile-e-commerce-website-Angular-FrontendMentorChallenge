@@ -1,5 +1,6 @@
 <div
   [routerLink]="link"
+  [ngClass]="mobileMenu ? 'mobile-menu' : ''"
   class="link-container"
   (mouseover)="onMouseOver()"
   (mouseout)="onMouseOut()"
@@ -9,7 +10,7 @@
       <img [src]="photo" [alt]="photo" />
     </div>
     <div class="link-container__link-wrapper__link-text-content">
-      <h3 class="h6">{{ title }}</h3>
+      <h6 class="h6">{{ title }}</h6>
       <app-button
         [hover]="isHovered"
         className="btn-default-3"
