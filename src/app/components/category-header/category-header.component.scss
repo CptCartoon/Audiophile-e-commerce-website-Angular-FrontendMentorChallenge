@@ -1,0 +1,33 @@
+@import "../../../assets/styles/variables.scss";
+
+.category-header-container {
+  padding: 0 2rem;
+  background-color: $black;
+  &__category-header-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1110px;
+    margin: auto;
+    height: 336px;
+
+    h2 {
+      color: $white;
+      margin-top: 98px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .category-header-container {
+    &__category-header-wrapper {
+      height: 192px;
+
+      h2 {
+        font-size: 28px;
+        margin-top: 92px;
+      }
+    }
+  }
+}

@@ -2,7 +2,8 @@
 
 .product-top-container {
   max-width: 1110px;
-
+  margin: auto;
+  margin-top: 160px;
   &__product-top-wrapper {
     display: flex;
     justify-content: space-between;
