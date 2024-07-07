@@ -1,18 +1,14 @@
 @import "../../../assets/styles/variables.scss";
 
 nav {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  margin: auto;
+  padding: 0rem 2rem;
 }
 
 .nav-container {
+  max-width: 1110px;
   margin: auto;
-  padding: 0rem 2rem;
-
   &__nav-wrapper {
-    margin: auto;
-    max-width: 1110px;
     display: flex;
     padding: 2rem 0rem;
     border-bottom: 1px solid #414141;
@@ -85,6 +81,11 @@ nav {
       }
     }
   }
+}
+
+.product-nav {
+  background-color: $black;
+  border-bottom: unset;
 }
 
 @media screen and (max-width: 690px) {

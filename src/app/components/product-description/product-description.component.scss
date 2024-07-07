@@ -1,15 +1,15 @@
 @import "../../../assets/styles/variables.scss";
 
 .product-description-container {
-  max-width: 1110px;
-  margin: auto;
+  padding: 0 2rem;
   margin-top: 160px;
   &__product-description-wrapper {
+    margin: auto;
+    max-width: 1110px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    flex-wrap: wrap;
     transition: 0.2s;
     h3 {
       transition: 0.2s;
@@ -18,6 +18,7 @@
       display: flex;
       flex-direction: column;
       max-width: 635px;
+      width: 100%;
       margin-right: 16px;
       transition: 0.2s;
       p {
@@ -31,6 +32,7 @@
       display: flex;
       flex-direction: column;
       transition: 0.2s;
+      margin-left: 32px;
       ul {
         margin-top: 32px;
         list-style: none;
@@ -51,15 +53,20 @@
   }
 }
 
-@media screen and (max-width: 870px) {
+@media screen and (max-width: 965px) {
   .product-description-container {
     &__product-description-wrapper {
+      flex-direction: column;
+      &__features {
+        margin-right: unset;
+      }
       &__inside-box {
         flex-direction: row;
         justify-content: space-between;
         margin-top: 120px;
         max-width: 555px;
         width: 100%;
+        margin-left: unset;
 
         ul {
           margin-top: unset;

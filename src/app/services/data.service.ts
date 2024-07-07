@@ -11,7 +11,7 @@ export class DataService {
   constructor() {}
 
   getProductById(id: number) {
-    return this.products.filter((product) => product.id === id);
+    return this.products.find((product) => product.id === id);
   }
 
   getProductsByCategory(category: string) {
@@ -24,5 +24,9 @@ export class DataService {
     );
 
     return sortByName.sort((product) => (product.new ? -1 : 1));
+  }
+
+  getAllCategories() {
+    return [...new Set(this.products.map((product) => product.category))];
   }
 }

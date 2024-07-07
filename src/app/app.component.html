@@ -1,3 +1,6 @@
-<app-nav></app-nav>
+<app-nav
+  [productNav]="productNav"
+  [ngClass]="{ 'nav-static': productNav }"
+></app-nav>
 <router-outlet></router-outlet>
 <app-footer></app-footer>

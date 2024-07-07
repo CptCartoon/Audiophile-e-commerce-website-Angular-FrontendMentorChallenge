@@ -1,11 +1,11 @@
 .product-gallery-container {
-  max-width: 1110px;
-  margin: auto;
   padding: 0 2rem;
   margin-top: 160px;
 }
 
 .product-gallery-container__product-gallery-wrapper {
+  margin: auto;
+  max-width: 1110px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -3,7 +3,7 @@ import { CategoryProductComponent } from '../../components/category-product/cate
 import { CategorySectionComponent } from '../../components/category-section/category-section.component';
 import { AboutSectionComponent } from '../../components/about-section/about-section.component';
 import { CategoryHeaderComponent } from '../../components/category-header/category-header.component';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { Product } from '../../interfaces/product';
 import { CommonModule } from '@angular/common';
@@ -25,13 +25,22 @@ export class CategoryComponent implements OnInit {
   productsInCategory!: Product[] | undefined;
   categoryName!: string;
 
-  constructor(private route: ActivatedRoute, private data: DataService) {
-    this.categoryName = this.route.snapshot.params['category'];
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private data: DataService
+  ) {
+    this.route.params.subscribe(() => {
+      this.categoryName = this.route.snapshot.params['category'];
+      this.productsInCategory = this.data.getProductsByCategory(
+        this.categoryName
+      );
+    });
   }
 
   ngOnInit(): void {
-    this.productsInCategory = this.data.getProductsByCategory(
-      this.categoryName
-    );
+    if (!this.data.getAllCategories().includes(this.categoryName)) {
+      this.router.navigate(['']);
+    }
   }
 }

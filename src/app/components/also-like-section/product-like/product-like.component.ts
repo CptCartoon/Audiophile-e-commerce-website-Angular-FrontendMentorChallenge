@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ButtonComponent } from '../../button/button.component';
 
 @Component({
@@ -8,4 +8,7 @@ import { ButtonComponent } from '../../button/button.component';
   styleUrl: './product-like.component.scss',
   imports: [ButtonComponent],
 })
-export class ProductLikeComponent {}
+export class ProductLikeComponent {
+  @Input() link!: string;
+  @Input() name!: string;
+}
