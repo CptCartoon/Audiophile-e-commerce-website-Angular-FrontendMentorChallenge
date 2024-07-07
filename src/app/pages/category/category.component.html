@@ -1,6 +1,10 @@
-<app-category-header></app-category-header>
-<app-category-product [newProduct]="true"></app-category-product>
-<app-category-product [textLeft]="true"></app-category-product>
-<app-category-product></app-category-product>
+<app-category-header [categoryTitle]="categoryName"></app-category-header>
+<div class="products">
+  <app-category-product
+    *ngFor="let product of productsInCategory; index as i"
+    [textLeft]="i % 2 !== 0"
+    [product]="product"
+  ></app-category-product>
+</div>
 <app-category-section></app-category-section>
 <app-about-section></app-about-section>

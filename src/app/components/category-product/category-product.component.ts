@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CommonModule } from '@angular/common';
+import { Product } from '../../interfaces/product';
 
 @Component({
   selector: 'app-category-product',
@@ -9,7 +10,16 @@ import { CommonModule } from '@angular/common';
   styleUrl: './category-product.component.scss',
   imports: [ButtonComponent, CommonModule],
 })
-export class CategoryProductComponent {
-  @Input() newProduct: boolean = false;
+export class CategoryProductComponent implements OnInit {
+  @Input() product!: Product;
   @Input() textLeft: boolean = false;
+
+  baseLink!: string;
+
+  ngOnInit(): void {
+    this.baseLink =
+      '/assets/product-' +
+      this.product.slug +
+      '/desktop/image-category-page-preview.jpg';
+  }
 }

@@ -1,20 +1,18 @@
 <div class="category-product-container">
   <div class="category-product-container__category-product-wrapper">
     <div
-      [ngStyle]="{ order: textLeft ? '2' : '1' }"
+      [ngClass]="{ 'img-text-left': textLeft }"
       class="category-product-container__category-product-wrapper__product-photo"
-    ></div>
+    >
+      <img [src]="baseLink" alt="" />
+    </div>
     <div
-      [ngStyle]="{ order: textLeft ? '1' : '2' }"
+      [ngClass]="{ 'text-content-left': textLeft }"
       class="category-product-container__category-product-wrapper__text-content"
     >
-      <p class="overline" *ngIf="newProduct">NEW PRODUCT</p>
-      <h2 class="h2">XX99 Mark II Headphones</h2>
-      <p class="bodytext">
-        The new XX99 Mark II headphones is the pinnacle of pristine audio. It
-        redefines your premium headphone experience by reproducing the balanced
-        depth and precision of studio-quality sound.
-      </p>
+      <p class="overline" *ngIf="product.new">NEW PRODUCT</p>
+      <h2 class="h2">{{ product.name }}</h2>
+      <p class="bodytext">{{ product.description }}.</p>
       <app-button btnLabel="SEE PRODUCT" className="btn-default-1"></app-button>
     </div>
   </div>

@@ -11,7 +11,7 @@ export const routes: Routes = [
     title: 'Audiophile - Home Page',
   },
   {
-    path: 'category',
+    path: 'category/:category',
     component: CategoryComponent,
     title: 'Category',
   },

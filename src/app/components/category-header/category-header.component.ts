@@ -1,12 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-category-header',
   standalone: true,
   imports: [],
   templateUrl: './category-header.component.html',
-  styleUrl: './category-header.component.scss'
+  styleUrl: './category-header.component.scss',
 })
 export class CategoryHeaderComponent {
-
+  @Input() categoryTitle!: string;
 }
