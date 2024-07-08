@@ -1,0 +1,72 @@
+<div class="form-container">
+  <div class="form-container__form-wrapper">
+    <h3 class="h3">CHECKOUT</h3>
+    <div class="form-container__form-wrapper__billing-details">
+      <p class="subtitle">BILLING DETAILS</p>
+      <div class="inputs-wrapper">
+        <app-text-input
+          labelText="Name"
+          placeholder="Alexei Ward"
+          type="text"
+        ></app-text-input>
+        <app-text-input
+          labelText="Email Address"
+          placeholder="alexei@email.com"
+          type="email"
+        ></app-text-input>
+        <app-text-input
+          labelText="Phone"
+          placeholder="+1 202-555-0136"
+          type="text"
+        ></app-text-input>
+      </div>
+    </div>
+    <div class="form-container__form-wrapper__shipping-info">
+      <p class="subtitle">SHIPPING INFO</p>
+      <div class="inputs-wrapper">
+        <app-text-input
+          labelText="Address"
+          placeholder="1137 Williams Avenue"
+          type="address"
+        ></app-text-input>
+        <app-text-input
+          labelText="ZIP Code"
+          placeholder="10001"
+          type="email"
+        ></app-text-input>
+        <app-text-input
+          labelText="City"
+          placeholder="New York"
+          type="text"
+        ></app-text-input>
+        <app-text-input
+          labelText="Country"
+          placeholder="United States"
+          type="text"
+        ></app-text-input>
+      </div>
+    </div>
+    <div class="form-container__form-wrapper__payment-details">
+      <p class="subtitle">PAYMENT DETAILS</p>
+      <div class="inputs-wrapper">
+        <div class="radio-wrapper">
+          <span>PAYMENT METHOD</span>
+          <div class="radios">
+            <app-radio-input labelText="e-Money"></app-radio-input>
+            <app-radio-input labelText="Cash on Delivery"></app-radio-input>
+          </div>
+        </div>
+        <app-text-input
+          labelText="e-Money Number"
+          placeholder="238521993"
+          type="text"
+        ></app-text-input>
+        <app-text-input
+          labelText="e-Money PIN"
+          placeholder="6891"
+          type="text"
+        ></app-text-input>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+.form-container {
+  &__form-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    padding: 54px 48px 48px 48px;
+    border: 1px solid;
+    max-width: 730px;
+    width: 100%;
+
+    &__billing-details {
+      p {
+        margin-top: 41px;
+      }
+
+      .inputs-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        app-text-input {
+          max-width: 309px;
+          width: 100%;
+          display: block;
+          margin-top: 16px;
+
+          &:first-child {
+            margin-right: 12px;
+          }
+        }
+      }
+    }
+
+    &__shipping-info {
+      margin-top: 53px;
+
+      .inputs-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        app-text-input {
+          max-width: 309px;
+          width: 100%;
+          display: block;
+          margin-top: 16px;
+
+          &:first-child {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+
+    &__payment-details {
+      margin-top: 53px;
+
+      .radio-wrapper {
+        width: 100%;
+        margin-top: 16px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        span {
+          display: block;
+          font-size: 13px;
+          letter-spacing: -0.2px;
+          font-weight: bold;
+          margin-bottom: 9px;
+        }
+
+        .radios {
+          flex-basis: 1;
+          width: 100%;
+          max-width: 309px;
+          width: 100%;
+          app-radio-input {
+            display: block;
+          }
+        }
+      }
+
+      .inputs-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        app-text-input {
+          max-width: 309px;
+          width: 100%;
+          display: block;
+          margin-top: 16px;
+        }
+      }
+    }
+  }
+}
