@@ -47,7 +47,5 @@ export class ProductComponent implements OnInit {
     if (!this.productId && this) {
       this.router.navigate(['']);
     }
-
-    console.log(this.product);
   }
 }

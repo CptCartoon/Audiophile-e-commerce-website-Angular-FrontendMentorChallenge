@@ -29,9 +29,9 @@ label {
 }
 
 .input:focus {
-  border: 2px solid $darkOrange;
+  border: 1px solid $darkOrange;
 }
 
 .input:user-invalid {
-  border: 2px solid $invalidRed;
+  border: 1px solid $invalidRed;
 }

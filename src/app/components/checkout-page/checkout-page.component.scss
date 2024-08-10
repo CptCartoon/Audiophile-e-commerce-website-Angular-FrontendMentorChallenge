@@ -1,0 +1,12 @@
+.checkout-page-container {
+  margin-top: 56px;
+  padding: 0 2rem;
+
+  &__wrapper {
+    max-width: 1110px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
