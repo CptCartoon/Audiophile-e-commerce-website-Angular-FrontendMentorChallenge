@@ -91,3 +91,47 @@
     }
   }
 }
+
+@media (max-width: 1171px) {
+  .form-container {
+    &__form-wrapper {
+      &__billing-details {
+        .inputs-wrapper {
+          app-text-input {
+            max-width: 100%;
+
+            &:first-child {
+              margin-right: 0px;
+            }
+          }
+        }
+      }
+
+      &__shipping-info {
+        .inputs-wrapper {
+          app-text-input {
+            max-width: 100%;
+          }
+        }
+      }
+
+      &__payment-details {
+        .radio-wrapper {
+          .radios {
+            flex-basis: 1;
+            max-width: 100%;
+            app-radio-input {
+              display: block;
+            }
+          }
+        }
+
+        .inputs-wrapper {
+          app-text-input {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

@@ -10,3 +10,16 @@
     align-items: flex-start;
   }
 }
+
+@media (max-width: 850px) {
+  .checkout-page-container {
+    &__wrapper {
+      flex-direction: column;
+
+      app-checkout-summary {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}
