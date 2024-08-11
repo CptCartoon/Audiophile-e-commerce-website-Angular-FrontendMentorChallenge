@@ -1,4 +1,4 @@
-<div class="modal-container">
+<div class="modal-container" *ngIf="modal">
   <div class="modal-container__wrapper">
     <div class="order-confirm-icon">
       <img src="../../../assets/checkout/icon-order-confirmation.svg" alt="" />
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <app-button btnLabel="BACK TO HOME"></app-button>
+    <app-button [btnLink]="''" btnLabel="BACK TO HOME"></app-button>
   </div>
 </div>
-<div class="backdrop"></div>
+<div (click)="backToHome()" *ngIf="modal" class="backdrop"></div>

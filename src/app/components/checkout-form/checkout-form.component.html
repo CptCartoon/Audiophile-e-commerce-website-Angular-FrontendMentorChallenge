@@ -1,4 +1,4 @@
-<div class="form-container">
+<form [formGroup]="myForm" class="form-container">
   <div class="form-container__form-wrapper">
     <h3 class="h3">CHECKOUT</h3>
     <div class="form-container__form-wrapper__billing-details">
@@ -8,16 +8,19 @@
           labelText="Name"
           placeholder="Alexei Ward"
           type="text"
+          formControlName="name"
         ></app-text-input>
         <app-text-input
           labelText="Email Address"
           placeholder="alexei@email.com"
           type="email"
+          formControlName="email"
         ></app-text-input>
         <app-text-input
           labelText="Phone"
           placeholder="+1 202-555-0136"
           type="text"
+          formControlName="phone"
         ></app-text-input>
       </div>
     </div>
@@ -28,21 +31,25 @@
           labelText="Address"
           placeholder="1137 Williams Avenue"
           type="address"
+          formControlName="address"
         ></app-text-input>
         <app-text-input
           labelText="ZIP Code"
           placeholder="10001"
-          type="email"
+          type="text"
+          formControlName="zipCode"
         ></app-text-input>
         <app-text-input
           labelText="City"
           placeholder="New York"
           type="text"
+          formControlName="city"
         ></app-text-input>
         <app-text-input
           labelText="Country"
           placeholder="United States"
           type="text"
+          formControlName="country"
         ></app-text-input>
       </div>
     </div>
@@ -52,21 +59,33 @@
         <div class="radio-wrapper">
           <span>PAYMENT METHOD</span>
           <div class="radios">
-            <app-radio-input labelText="e-Money"></app-radio-input>
-            <app-radio-input labelText="Cash on Delivery"></app-radio-input>
+            <app-radio-input
+              (click)="eMoneyChange(true)"
+              labelText="e-Money"
+              formControlName="emoney"
+            ></app-radio-input>
+            <app-radio-input
+              (click)="eMoneyChange(false)"
+              labelText="Cash on Delivery"
+              formControlName="cash"
+            ></app-radio-input>
           </div>
         </div>
-        <app-text-input
-          labelText="e-Money Number"
-          placeholder="238521993"
-          type="text"
-        ></app-text-input>
-        <app-text-input
-          labelText="e-Money PIN"
-          placeholder="6891"
-          type="text"
-        ></app-text-input>
+        <ng-container *ngIf="eMoney">
+          <app-text-input
+            labelText="e-Money Number"
+            placeholder="238521993"
+            type="text"
+            formControlName="emoneyNumber"
+          ></app-text-input>
+          <app-text-input
+            labelText="e-Money PIN"
+            placeholder="6891"
+            type="text"
+            formControlName="emoneyPIN"
+          ></app-text-input>
+        </ng-container>
       </div>
     </div>
   </div>
-</div>
+</form>
