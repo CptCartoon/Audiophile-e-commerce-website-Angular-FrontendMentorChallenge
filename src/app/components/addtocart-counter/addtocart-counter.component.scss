@@ -28,6 +28,10 @@
       }
     }
 
+    .input-cart {
+      height: 32px !important;
+    }
+
     .btn-counter {
       //   padding: 16px;
       height: 50px;
@@ -35,6 +39,23 @@
       background-color: $lightGrey;
       border: unset;
       font-size: 20px;
+      font-weight: bold;
+      color: #b5b5b5;
+      transition: 0.2s;
+
+      &:hover {
+        cursor: pointer;
+        color: $darkOrange;
+      }
+    }
+
+    .btn-counter-cart {
+      //   padding: 16px;
+      height: 32px;
+      width: 32px;
+      background-color: $lightGrey;
+      border: unset;
+      font-size: 1rempx;
       font-weight: bold;
       color: #b5b5b5;
       transition: 0.2s;
