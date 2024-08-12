@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CheckoutItemComponent } from './checkout-item/checkout-item.component';
 import { CheckoutModalComponent } from '../checkout-modal/checkout-modal.component';
@@ -11,9 +11,9 @@ import { CheckoutModalComponent } from '../checkout-modal/checkout-modal.compone
   styleUrl: './checkout-summary.component.scss',
 })
 export class CheckoutSummaryComponent {
-  modal = false;
+  @Output() continueAndPay = new EventEmitter<void>();
 
-  continueAndPay() {
-    this.modal = true;
+  continue() {
+    this.continueAndPay.emit();
   }
 }

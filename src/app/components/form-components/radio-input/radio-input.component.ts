@@ -1,40 +1,47 @@
 import { Component, Input, Optional, Self } from '@angular/core';
-import {
-  ControlContainer,
-  ControlValueAccessor,
-  FormGroupDirective,
-  NgControl,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 @Component({
   selector: 'app-radio-input',
   standalone: true,
-  imports: [ReactiveFormsModule],
   templateUrl: './radio-input.component.html',
-  styleUrl: './radio-input.component.scss',
-  viewProviders: [
-    {
-      provide: ControlContainer,
-      useExisting: FormGroupDirective,
-    },
-  ],
+  styleUrls: ['./radio-input.component.scss'],
 })
-export class RadioInputComponent {
+export class RadioInputComponent implements ControlValueAccessor {
   @Input() labelText!: string;
   @Input() name!: string;
-  @Input() checked: boolean = false;
-  @Input() formControlName!: string;
+  @Input() value!: string;
+
+  checked: boolean = false;
+  onChange = (value: any) => {};
+  onTouched = () => {};
 
   constructor(@Self() @Optional() public ngControl: NgControl) {
     if (this.ngControl) {
-      this.ngControl.valueAccessor = this.NOOP_VALUE_ACCESSOR;
+      this.ngControl.valueAccessor = this;
     }
   }
 
-  NOOP_VALUE_ACCESSOR: ControlValueAccessor = {
-    writeValue(): void {},
-    registerOnChange(): void {},
-    registerOnTouched(): void {},
-  };
+  writeValue(value: any): void {
+    this.checked = value === this.value;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState?(isDisabled: boolean): void {
+    // Implementacja w razie potrzeby
+  }
+
+  onInputChange(event: Event): void {
+    const inputElement = event.target as HTMLInputElement;
+    this.checked = inputElement.checked;
+    this.onChange(this.value);
+    this.onTouched();
+  }
 }

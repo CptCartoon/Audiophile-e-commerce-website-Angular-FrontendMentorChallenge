@@ -1,24 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from '../form-components/text-input/text-input.component';
 import { RadioInputComponent } from '../form-components/radio-input/radio-input.component';
-import {
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-checkout-form',
   standalone: true,
   templateUrl: './checkout-form.component.html',
-  styleUrl: './checkout-form.component.scss',
+  styleUrls: ['./checkout-form.component.scss'],
   imports: [
     TextInputComponent,
-    RadioInputComponent,
     CommonModule,
     ReactiveFormsModule,
+    RadioInputComponent,
   ],
 })
 export class CheckoutFormComponent {
@@ -34,14 +30,22 @@ export class CheckoutFormComponent {
       zipCode: ['', Validators.required],
       city: ['', Validators.required],
       country: ['', Validators.required],
-      emoney: ['', Validators.required],
-      cash: ['', Validators.required],
-      emoneyNumber: ['', Validators.required],
-      emoneyPIN: ['', Validators.required],
+      paymentMethod: ['', Validators.required],
+      emoneyNumber: [''],
+      emoneyPIN: [''],
     });
   }
 
   eMoneyChange(value: boolean) {
     this.eMoney = value;
+    if (value) {
+      this.myForm.get('emoneyNumber')?.setValidators(Validators.required);
+      this.myForm.get('emoneyPIN')?.setValidators(Validators.required);
+    } else {
+      this.myForm.get('emoneyNumber')?.clearValidators();
+      this.myForm.get('emoneyPIN')?.clearValidators();
+    }
+    this.myForm.get('emoneyNumber')?.updateValueAndValidity();
+    this.myForm.get('emoneyPIN')?.updateValueAndValidity();
   }
 }

@@ -60,14 +60,18 @@
           <span>PAYMENT METHOD</span>
           <div class="radios">
             <app-radio-input
+              name="paymentMethod"
+              value="eMoney"
               (click)="eMoneyChange(true)"
               labelText="e-Money"
-              formControlName="emoney"
+              formControlName="paymentMethod"
             ></app-radio-input>
             <app-radio-input
+              name="paymentMethod"
+              value="cash"
               (click)="eMoneyChange(false)"
               labelText="Cash on Delivery"
-              formControlName="cash"
+              formControlName="paymentMethod"
             ></app-radio-input>
           </div>
         </div>

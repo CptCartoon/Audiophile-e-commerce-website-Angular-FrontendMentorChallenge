@@ -13,7 +13,6 @@ import { CheckoutPageComponent } from '../../components/checkout-page/checkout-p
   styleUrl: './checkout.component.scss',
   imports: [
     TextInputComponent,
-    RadioInputComponent,
     CheckoutFormComponent,
     CheckoutSummaryComponent,
     CheckoutPageComponent,

@@ -1,6 +1,9 @@
 <div class="checkout-page-container">
   <div class="checkout-page-container__wrapper">
     <app-checkout-form></app-checkout-form>
-    <app-checkout-summary></app-checkout-summary>
+    <app-checkout-summary
+      (continueAndPay)="continueAndPay()"
+    ></app-checkout-summary>
   </div>
 </div>
+<app-checkout-modal [modal]="modal"></app-checkout-modal>

@@ -1,11 +1,12 @@
-<label class="label-radio"
-  >{{ labelText }}
+<label class="label-radio">
+  {{ labelText }}
   <input
     class="input-radio"
     type="radio"
-    [checked]="checked"
     [name]="name"
-    [formControlName]="formControlName"
+    [value]="value"
+    [checked]="checked"
+    (change)="onInputChange($event)"
   />
   <span class="radio-checkmark"></span>
 </label>

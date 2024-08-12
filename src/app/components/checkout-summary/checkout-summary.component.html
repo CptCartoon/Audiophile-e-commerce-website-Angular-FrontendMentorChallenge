@@ -21,11 +21,11 @@
         <span class="bodytext">GRAND TOTAL</span><span class="h6">$ 5,446</span>
       </p>
       <app-button
-        (click)="continueAndPay()"
+        type="submit"
+        (click)="continue()"
         className="btn-default-1"
         btnLabel="CONTINUE & PAY"
       ></app-button>
     </div>
   </div>
 </div>
-<app-checkout-modal [modal]="modal"></app-checkout-modal>
