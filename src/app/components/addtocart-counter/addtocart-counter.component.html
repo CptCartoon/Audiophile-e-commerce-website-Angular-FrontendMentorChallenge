@@ -1,7 +1,23 @@
 <div class="counter-container">
   <div class="counter-container__counter-wrapper">
-    <button [class]="cart ? 'btn-counter-cart' : 'btn-counter'">-</button>
-    <input [ngClass]="{ 'input-cart': cart }" type="number" min="0" value="0" />
-    <button [class]="cart ? 'btn-counter-cart' : 'btn-counter'">+</button>
+    <button
+      (click)="decrement()"
+      [class]="cart ? 'btn-counter-cart' : 'btn-counter'"
+    >
+      -
+    </button>
+    <input
+      #countValue
+      [ngClass]="{ 'input-cart': cart }"
+      type="number"
+      min="0"
+      value="0"
+    />
+    <button
+      (click)="increment()"
+      [class]="cart ? 'btn-counter-cart' : 'btn-counter'"
+    >
+      +
+    </button>
   </div>
 </div>
