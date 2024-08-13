@@ -1,5 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, Input, input, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  input,
+  Output,
+  ViewChild,
+} from '@angular/core';
 
 @Component({
   selector: 'app-addtocart-counter',
@@ -11,18 +19,24 @@ import { Component, ElementRef, Input, input, ViewChild } from '@angular/core';
 export class AddtocartCounterComponent {
   @ViewChild('countValue') countValue!: ElementRef;
   @Input() cart: boolean = false;
+  @Output() countChange: EventEmitter<number> = new EventEmitter<number>();
 
   value = 0;
 
   increment() {
-    this.countValue.nativeElement.value++;
+    this.value++;
+    this.countValue.nativeElement.value = this.value;
+    this.countChange.emit(this.value);
   }
 
   decrement() {
     if (this.countValue.nativeElement.value <= 0) {
-      this.countValue.nativeElement.value = 0;
+      this.value = 0;
+      this.countValue.nativeElement.value = this.value;
     } else {
-      this.countValue.nativeElement.value--;
+      this.value--;
+      this.countValue.nativeElement.value = this.value;
     }
+    this.countChange.emit(this.value);
   }
 }

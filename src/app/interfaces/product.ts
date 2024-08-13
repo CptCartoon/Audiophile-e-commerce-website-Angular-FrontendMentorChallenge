@@ -14,6 +14,13 @@ export interface Product {
   others: Other[];
 }
 
+export interface CartProduct {
+  id: number;
+  name: string;
+  image: CategoryImage;
+  count: number;
+}
+
 interface CategoryImage {
   mobile: string;
   tablet: string;

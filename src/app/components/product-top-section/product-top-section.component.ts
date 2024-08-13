@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { AddtocartCounterComponent } from '../../components/addtocart-counter/addtocart-counter.component';
-import { Product } from '../../interfaces/product';
+import { CartProduct, Product } from '../../interfaces/product';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-top-section',
@@ -17,8 +18,28 @@ export class ProductTopSectionComponent {
 
   baseLink!: string;
 
+  cartProduct: CartProduct = {} as CartProduct;
+
+  constructor(private cartService: CartService) {}
+
   ngOnInit(): void {
+    if (this.product) {
+      this.cartProduct = {
+        id: this.product.id,
+        name: this.product.name,
+        image: this.product.image,
+        count: 0,
+      };
+    }
+
     this.baseLink =
       '/assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
+  }
+  updateCount(value: number) {
+    this.cartProduct.count = value;
+  }
+
+  addToCart(product: CartProduct) {
+    this.cartService.addToCart(product);
   }
 }

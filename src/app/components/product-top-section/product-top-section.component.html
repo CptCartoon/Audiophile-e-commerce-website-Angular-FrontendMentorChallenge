@@ -11,8 +11,11 @@
       </p>
       <h6 class="h6">$ {{ product?.price }}</h6>
       <div class="add-to-cart">
-        <app-addtocart-counter></app-addtocart-counter>
+        <app-addtocart-counter
+          (countChange)="updateCount($event)"
+        ></app-addtocart-counter>
         <app-button
+          (click)="addToCart(cartProduct)"
           btnLabel="ADD TO CART"
           className="btn-default-1"
         ></app-button>
