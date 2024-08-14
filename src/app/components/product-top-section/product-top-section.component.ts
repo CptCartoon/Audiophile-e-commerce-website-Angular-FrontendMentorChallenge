@@ -27,7 +27,8 @@ export class ProductTopSectionComponent {
       this.cartProduct = {
         id: this.product.id,
         name: this.product.name,
-        image: this.product.image,
+        slug: this.product.slug,
+        price: this.product.price,
         count: 0,
       };
     }

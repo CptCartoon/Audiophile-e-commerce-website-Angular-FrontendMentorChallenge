@@ -51,6 +51,27 @@ nav {
         top: 84px;
         right: 0;
       }
+
+      .cart-button {
+        position: relative;
+      }
+
+      .cart-count-info {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $darkOrange;
+        color: white;
+        border-radius: 100px;
+        padding: 0.25rem;
+        width: 21px;
+        height: 21px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        left: 20px;
+        bottom: 10px;
+      }
     }
 
     &__menu {

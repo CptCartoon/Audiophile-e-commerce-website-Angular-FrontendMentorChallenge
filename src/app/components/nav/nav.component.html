@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="nav-container__nav-wrapper__logo">
-        <a href=""
+        <a [routerLink]="['/']"
           ><img
             class="nav-logo"
             src="../../../assets/shared/desktop/logo.svg"
@@ -22,7 +22,7 @@
       </div>
       <div class="nav-container__nav-wrapper__menu">
         <ul>
-          <li class="nav-link"><a routerLink="">HOME</a></li>
+          <li class="nav-link"><a [routerLink]="['/']">HOME</a></li>
           <li class="nav-link">
             <a [routerLink]="['category/headphones']">HEADPHONES</a>
           </li>
@@ -35,8 +35,19 @@
         </ul>
       </div>
       <div class="nav-container__nav-wrapper__cart-container">
-        <button (click)="openCart()" class="cart-button"></button>
-        <app-cart (closeCart)="openCart()" *ngIf="showCart"></app-cart>
+        <button (click)="openCart()" class="cart-button">
+          <span class="cart-count-info" *ngIf="products.length > 0">{{
+            totalCount
+          }}</span>
+        </button>
+
+        <app-cart
+          [products]="products"
+          [totalPrice]="totalPrice"
+          [totalCount]="totalCount"
+          (closeCart)="openCart()"
+          *ngIf="showCart"
+        ></app-cart>
       </div>
     </div>
   </div>

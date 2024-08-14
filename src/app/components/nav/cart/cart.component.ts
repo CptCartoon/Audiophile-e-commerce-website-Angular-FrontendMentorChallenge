@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonComponent } from '../../button/button.component';
 import { CartItemComponent } from '../../cart-item/cart-item.component';
 import { CartProduct } from '../../../interfaces/product';
@@ -14,24 +14,16 @@ import { CommonModule } from '@angular/common';
 })
 export class CartComponent implements OnInit {
   @Output() closeCart = new EventEmitter<void>();
-
-  products: CartProduct[] | undefined;
-  product = [{ name: 'xd1' }, { name: 'xd2' }];
+  @Input() products!: CartProduct[];
+  @Input() totalPrice: number = 0;
+  @Input() totalCount: number = 0;
 
   constructor(private cartService: CartService) {}
 
-  ngOnInit(): void {
-    this.getCartProducts();
-    this.cartService.cartChange.next(this.cartService._getCart);
-  }
+  ngOnInit(): void {}
 
-  getCartProducts() {
-    this.cartService.cartChange.subscribe({
-      next: (data) => {
-        this.products = data;
-        console.log(this.products);
-      },
-    });
+  clearCart() {
+    this.cartService.clearCart();
   }
 
   click() {

@@ -39,7 +39,6 @@ export class ProductComponent implements OnInit {
     this.route.params.subscribe(() => {
       this.productId = this.route.snapshot.params['id'];
       this.product = this.data.getProductById(parseInt(this.productId));
-      this.changeNav.changeNav();
     });
   }
 
@@ -47,5 +46,6 @@ export class ProductComponent implements OnInit {
     if (!this.productId && this) {
       this.router.navigate(['']);
     }
+    this.changeNav.changeNav();
   }
 }

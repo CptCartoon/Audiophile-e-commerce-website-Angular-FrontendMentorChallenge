@@ -7,7 +7,13 @@ import { Subject } from 'rxjs';
 export class ChangeNavService {
   productNav: boolean = false;
   productNavChange = new Subject<boolean>();
+
   constructor() {}
+
+  public set _productNav(value: any) {
+    this.productNav = value;
+    this.productNavChange.next(this.productNav);
+  }
 
   changeNav() {
     this.productNav = !this.productNav;

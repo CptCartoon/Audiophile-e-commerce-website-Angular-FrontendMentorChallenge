@@ -11,7 +11,7 @@
       [ngClass]="{ 'input-cart': cart }"
       type="number"
       min="0"
-      value="0"
+      [value]="count"
     />
     <button
       (click)="increment()"

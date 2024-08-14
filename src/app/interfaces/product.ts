@@ -17,8 +17,9 @@ export interface Product {
 export interface CartProduct {
   id: number;
   name: string;
-  image: CategoryImage;
+  slug: string;
   count: number;
+  price: number;
 }
 
 interface CategoryImage {
@@ -39,6 +40,7 @@ interface Include {
 }
 
 interface Other {
+  id: number;
   slug: string;
   name: string;
   image: CategoryImage;

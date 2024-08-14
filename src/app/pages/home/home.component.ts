@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { CategorySectionComponent } from '../../components/category-section/category-section.component';
 import { ProductsInfoSectionComponent } from '../../components/products-info-section/products-info-section.component';
 import { AboutSectionComponent } from '../../components/about-section/about-section.component';
+import { ChangeNavService } from '../../services/change-nav.service';
 
 @Component({
   selector: 'app-home',
@@ -16,4 +17,12 @@ import { AboutSectionComponent } from '../../components/about-section/about-sect
     AboutSectionComponent,
   ],
 })
-export class HomeComponent {}
+export class HomeComponent implements OnInit {
+  constructor(private changeNav: ChangeNavService) {
+    this.changeNav.changeNav();
+  }
+
+  ngOnInit(): void {
+    this.changeNav.changeNav();
+  }
+}

@@ -19,9 +19,10 @@ import {
 export class AddtocartCounterComponent {
   @ViewChild('countValue') countValue!: ElementRef;
   @Input() cart: boolean = false;
+  @Input() count: number = 0;
   @Output() countChange: EventEmitter<number> = new EventEmitter<number>();
 
-  value = 0;
+  value = this.count;
 
   increment() {
     this.value++;

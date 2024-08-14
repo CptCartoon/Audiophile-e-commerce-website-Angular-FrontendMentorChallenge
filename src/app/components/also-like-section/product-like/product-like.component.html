@@ -4,6 +4,10 @@
       <img [src]="link" alt="" />
     </div>
     <h5 class="h5">{{ name }}</h5>
-    <app-button btnLabel="SEE PRODUCT" className="btn-default-1"></app-button>
+    <app-button
+      [btnLink]="'/product/' + id"
+      btnLabel="SEE PRODUCT"
+      className="btn-default-1"
+    ></app-button>
   </div>
 </div>

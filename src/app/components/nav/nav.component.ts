@@ -3,6 +3,8 @@ import { CartComponent } from './cart/cart.component';
 import { CommonModule } from '@angular/common';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { RouterModule } from '@angular/router';
+import { CartProduct } from '../../interfaces/product';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-nav',
@@ -15,8 +17,11 @@ export class NavComponent {
   @Input() productNav: boolean = false;
   showCart: boolean = false;
   showMenu: boolean = false;
-  private scrollPosition = 0;
 
+  products!: CartProduct[];
+  totalPrice: number = 0;
+  totalCount: number = 0;
+  constructor(private cartService: CartService) {}
   openCart() {
     if (this.showMenu) {
       this.showMenu = false;
@@ -34,5 +39,36 @@ export class NavComponent {
   closeModal() {
     this.showMenu = false;
     this.showCart = false;
+  }
+
+  ngOnInit(): void {
+    this.getCartProducts();
+    this.cartService.cartChange.next(this.cartService._getCart);
+    this.cartService.totalPriceChange.next(this.cartService._getTotalPrice);
+    this.cartService.totalCountChange.next(this.cartService._getTotalCount);
+  }
+
+  getCartProducts() {
+    this.cartService.cartChange.subscribe({
+      next: (data) => {
+        this.products = data;
+      },
+    });
+
+    this.cartService.totalPriceChange.subscribe({
+      next: (data) => {
+        this.totalPrice = data;
+      },
+    });
+
+    this.cartService.totalCountChange.subscribe({
+      next: (data) => {
+        this.totalCount = data;
+      },
+    });
+  }
+
+  clearCart() {
+    this.cartService.clearCart();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AddtocartCounterComponent } from '../addtocart-counter/addtocart-counter.component';
 import { CartProduct } from '../../interfaces/product';
 
@@ -9,6 +9,12 @@ import { CartProduct } from '../../interfaces/product';
   templateUrl: './cart-item.component.html',
   styleUrl: './cart-item.component.scss',
 })
-export class CartItemComponent {
-  @Input() product: CartProduct | undefined;
+export class CartItemComponent implements OnInit {
+  @Input() product!: CartProduct;
+  imgLink!: string;
+
+  ngOnInit(): void {
+    this.imgLink =
+      '/assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ProductLikeComponent } from './product-like/product-like.component';
 import { Product } from '../../interfaces/product';
 import { CommonModule } from '@angular/common';
@@ -10,8 +10,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './also-like-section.component.scss',
   imports: [ProductLikeComponent, CommonModule],
 })
-export class AlsoLikeSectionComponent {
+export class AlsoLikeSectionComponent implements OnInit {
   @Input() product!: Product | undefined;
+
+  ngOnInit(): void {
+    console.log(this.product?.others);
+  }
 
   createImageLink(slug: string) {
     return '/assets/shared/desktop/image-' + slug + '.jpg';

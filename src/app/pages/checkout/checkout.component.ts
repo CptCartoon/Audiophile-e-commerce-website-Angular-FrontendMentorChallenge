@@ -20,6 +20,7 @@ import { CheckoutPageComponent } from '../../components/checkout-page/checkout-p
 })
 export class CheckoutComponent implements OnInit {
   constructor(private changeNav: ChangeNavService) {}
+
   ngOnInit(): void {
     this.changeNav.changeNav();
   }

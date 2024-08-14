@@ -1,8 +1,8 @@
 <div class="cart-container">
   <div class="cart-container__cart-wrapper">
     <div class="cart-container__cart-wrapper__cart-header">
-      <h6 class="h6">Cart (3)</h6>
-      <button class="cart-remove-btn">Remove all</button>
+      <h6 class="h6">Cart ({{ totalCount }})</h6>
+      <button (click)="clearCart()" class="cart-remove-btn">Remove all</button>
     </div>
     <div class="cart-container__cart-wrapper__cart-content">
       <app-cart-item
@@ -12,7 +12,7 @@
     </div>
     <div class="cart-container__cart-wrapper__cart-summary">
       <p class="checkout-total-label">TOTAL</p>
-      <span class="total-price">$ 5,99</span>
+      <span class="total-price">$ {{ totalPrice }}</span>
     </div>
     <app-button
       btnLink="/checkout"

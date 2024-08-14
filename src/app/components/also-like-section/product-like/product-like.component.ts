@@ -11,4 +11,5 @@ import { ButtonComponent } from '../../button/button.component';
 export class ProductLikeComponent {
   @Input() link!: string;
   @Input() name!: string;
+  @Input() id!: number;
 }
