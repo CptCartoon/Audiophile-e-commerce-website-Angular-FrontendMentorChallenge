@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ButtonComponent } from '../../button/button.component';
 import { CartItemComponent } from '../../cart-item/cart-item.component';
 import { CartProduct } from '../../../interfaces/product';
@@ -13,6 +13,8 @@ import { CommonModule } from '@angular/common';
   imports: [ButtonComponent, CartItemComponent, CommonModule],
 })
 export class CartComponent implements OnInit {
+  @Output() closeCart = new EventEmitter<void>();
+
   products: CartProduct[] | undefined;
   product = [{ name: 'xd1' }, { name: 'xd2' }];
 
@@ -30,5 +32,9 @@ export class CartComponent implements OnInit {
         console.log(this.products);
       },
     });
+  }
+
+  click() {
+    this.closeCart.emit();
   }
 }

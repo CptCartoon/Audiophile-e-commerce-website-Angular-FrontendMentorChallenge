@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CategoryLinkComponent } from '../../category-link/category-link.component';
 
 @Component({
@@ -8,4 +8,10 @@ import { CategoryLinkComponent } from '../../category-link/category-link.compone
   styleUrl: './mobile-menu.component.scss',
   imports: [CategoryLinkComponent],
 })
-export class MobileMenuComponent {}
+export class MobileMenuComponent {
+  @Output() mobileItem = new EventEmitter<void>();
+
+  click() {
+    this.mobileItem.emit();
+  }
+}

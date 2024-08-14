@@ -6,7 +6,10 @@
         <div
           class="nav-container__nav-wrapper__nav-hamburger__mobile-container"
         >
-          <app-mobile-menu *ngIf="showMenu"></app-mobile-menu>
+          <app-mobile-menu
+            *ngIf="showMenu"
+            (mobileItem)="openMenu()"
+          ></app-mobile-menu>
         </div>
       </div>
       <div class="nav-container__nav-wrapper__logo">
@@ -33,9 +36,9 @@
       </div>
       <div class="nav-container__nav-wrapper__cart-container">
         <button (click)="openCart()" class="cart-button"></button>
-        <app-cart *ngIf="showCart"></app-cart>
+        <app-cart (closeCart)="openCart()" *ngIf="showCart"></app-cart>
       </div>
     </div>
   </div>
 </nav>
-<div (click)="openCart()" *ngIf="showCart" class="backdrop"></div>
+<div (click)="closeModal()" *ngIf="showCart || showMenu" class="backdrop"></div>

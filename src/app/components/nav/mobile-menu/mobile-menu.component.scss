@@ -16,6 +16,8 @@
 
     app-category-link {
       width: 100%;
+      display: flex;
+      justify-content: center;
       &:first-child {
         margin-top: 60px;
       }
