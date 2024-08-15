@@ -5,6 +5,7 @@ import {
   EventEmitter,
   Input,
   input,
+  OnInit,
   Output,
   ViewChild,
 } from '@angular/core';
@@ -16,13 +17,19 @@ import {
   templateUrl: './addtocart-counter.component.html',
   styleUrl: './addtocart-counter.component.scss',
 })
-export class AddtocartCounterComponent {
+export class AddtocartCounterComponent implements OnInit {
   @ViewChild('countValue') countValue!: ElementRef;
   @Input() cart: boolean = false;
   @Input() count: number = 0;
   @Output() countChange: EventEmitter<number> = new EventEmitter<number>();
 
-  value = this.count;
+  value: number = 0;
+
+  ngOnInit(): void {
+    if (this.count > 0) {
+      this.value = this.count;
+    }
+  }
 
   increment() {
     this.value++;

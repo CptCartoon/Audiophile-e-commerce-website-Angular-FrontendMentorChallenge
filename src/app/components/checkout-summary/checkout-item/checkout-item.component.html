@@ -1,17 +1,14 @@
 <div class="checkout-item-container">
   <div class="checkout-item-container__wrapper">
     <div class="photo">
-      <img
-        src="../../../../assets/cart/image-xx99-mark-two-headphones.jpg"
-        alt=""
-      />
+      <img [src]="imgLink" alt="" />
     </div>
     <div class="item-info">
       <div class="item-info__item-name">
-        <span class="bodytext">XX99 MK II</span
-        ><span class="bodytext count">x2</span>
+        <span class="bodytext">{{ product.name }}</span
+        ><span class="bodytext count">x{{ product.count }}</span>
       </div>
-      <p class="bodytext price">$ 2,999</p>
+      <p class="bodytext price">$ {{ product.price }}</p>
     </div>
   </div>
 </div>

@@ -5,6 +5,8 @@ import { RadioInputComponent } from '../../components/form-components/radio-inpu
 import { CheckoutFormComponent } from '../../components/checkout-form/checkout-form.component';
 import { CheckoutSummaryComponent } from '../../components/checkout-summary/checkout-summary.component';
 import { CheckoutPageComponent } from '../../components/checkout-page/checkout-page.component';
+import { CartService } from '../../services/cart.service';
+import { CartProduct, CartSummary } from '../../interfaces/product';
 
 @Component({
   selector: 'app-checkout',
@@ -19,7 +21,13 @@ import { CheckoutPageComponent } from '../../components/checkout-page/checkout-p
   ],
 })
 export class CheckoutComponent implements OnInit {
-  constructor(private changeNav: ChangeNavService) {}
+  cartProducts!: CartProduct[];
+  summary!: CartSummary;
+
+  constructor(
+    private changeNav: ChangeNavService,
+    private cartService: CartService
+  ) {}
 
   ngOnInit(): void {
     this.changeNav.changeNav();

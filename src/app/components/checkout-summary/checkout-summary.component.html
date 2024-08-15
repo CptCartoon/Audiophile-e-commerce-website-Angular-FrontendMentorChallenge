@@ -2,23 +2,27 @@
   <div class="checkout-summary-container__wrapper">
     <h6 class="h6">Summary</h6>
     <div class="checkout-summary-container__wrapper__cart">
-      <app-checkout-item></app-checkout-item>
-      <app-checkout-item></app-checkout-item>
-      <app-checkout-item></app-checkout-item>
+      <app-checkout-item
+        *ngFor="let product of cartProducts"
+        [product]="product"
+      ></app-checkout-item>
     </div>
     <div class="checkout-summary-container__wrapper__summary-details">
       <p class="p-title">
-        <span class="bodytext">TOTAL</span><span class="h6 grey">$ 5,396</span>
+        <span class="bodytext">TOTAL</span
+        ><span class="h6 grey">$ {{ summary.totalPrice }}</span>
       </p>
       <p class="p-title">
-        <span class="bodytext">SHIPPING</span><span class="h6">$ 50</span>
+        <span class="bodytext">SHIPPING</span
+        ><span class="h6">$ {{ summary.shipping }}</span>
       </p>
       <p class="p-title">
         <span class="bodytext">VAT (INCLUDED)</span
-        ><span class="h6">$ 1,079</span>
+        ><span class="h6">$ {{ summary.tax }}</span>
       </p>
       <p class="p-title p-grand-total-title">
-        <span class="bodytext">GRAND TOTAL</span><span class="h6">$ 5,446</span>
+        <span class="bodytext">GRAND TOTAL</span
+        ><span class="h6">$ {{ summary.totalPrice }}</span>
       </p>
       <app-button
         type="submit"

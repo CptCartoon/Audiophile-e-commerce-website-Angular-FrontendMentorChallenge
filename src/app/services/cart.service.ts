@@ -74,6 +74,23 @@ export class CartService {
     this.totalCountChange.next(this.totalCount);
   }
 
+  updateItem(value: number, id: number) {
+    const updatedItem = this.cart.find((item) => item.id === id);
+    console.log(value);
+    if (updatedItem) {
+      updatedItem.count = value;
+    }
+
+    if (updatedItem && updatedItem.count <= 0) {
+      this.cart = this.cart.filter((item) => item.id !== updatedItem?.id);
+    }
+
+    this.cartChange.next(this._getCart);
+    this.getTotalCount();
+    this.getCartPrice();
+    this.saveCartToLocalStorage();
+  }
+
   clearCart() {
     this.cart = [];
     this.saveCartToLocalStorage();

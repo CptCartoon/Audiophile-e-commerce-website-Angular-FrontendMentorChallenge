@@ -12,6 +12,7 @@
     <div class="counter">
       <app-addtocart-counter
         [count]="product.count"
+        (countChange)="updateCount($event, product.id)"
         [cart]="true"
       ></app-addtocart-counter>
     </div>

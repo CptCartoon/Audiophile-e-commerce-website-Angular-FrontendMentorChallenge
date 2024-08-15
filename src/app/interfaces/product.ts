@@ -45,3 +45,9 @@ interface Other {
   name: string;
   image: CategoryImage;
 }
+
+export interface CartSummary {
+  totalPrice: number;
+  shipping: number;
+  tax: number;
+}
