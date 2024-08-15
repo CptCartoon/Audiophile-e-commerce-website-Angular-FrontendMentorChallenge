@@ -16,6 +16,13 @@
   -ms-user-select: none;
   user-select: none;
   transition: 0.2s;
+
+  span.label {
+    font-size: 13px;
+    letter-spacing: -0.2px;
+    font-weight: bold;
+    margin-bottom: 9px;
+  }
 }
 
 .label-radio:hover {
@@ -73,4 +80,9 @@
   height: 10px;
   border-radius: 50%;
   background: $darkOrange;
+}
+
+.invalid {
+  color: $invalidRed;
+  border-color: $invalidRed;
 }

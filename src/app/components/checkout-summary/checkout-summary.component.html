@@ -6,6 +6,7 @@
         *ngFor="let product of cartProducts"
         [product]="product"
       ></app-checkout-item>
+      <span *ngIf="!cartProducts.length" class="bodytext">Cart is empty.</span>
     </div>
     <div class="checkout-summary-container__wrapper__summary-details">
       <p class="p-title">

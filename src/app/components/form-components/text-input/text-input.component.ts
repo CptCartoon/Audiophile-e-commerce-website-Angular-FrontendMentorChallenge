@@ -1,4 +1,14 @@
-import { Component, forwardRef, Input, Optional, Self } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {
+  Component,
+  forwardRef,
+  Input,
+  OnChanges,
+  OnInit,
+  Optional,
+  Self,
+  SimpleChanges,
+} from '@angular/core';
 import {
   ControlContainer,
   ControlValueAccessor,
@@ -10,7 +20,7 @@ import {
 @Component({
   selector: 'app-text-input',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './text-input.component.html',
   styleUrl: './text-input.component.scss',
   viewProviders: [
@@ -25,6 +35,7 @@ export class TextInputComponent {
   @Input() placeholder!: string;
   @Input() type!: string;
   @Input() formControlName!: string;
+  @Input() valid!: boolean;
 
   constructor(@Self() @Optional() public ngControl: NgControl) {
     if (this.ngControl) {

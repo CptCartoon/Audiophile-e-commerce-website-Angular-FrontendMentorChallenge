@@ -19,10 +19,10 @@ import { ChangeNavService } from '../../services/change-nav.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private changeNav: ChangeNavService) {
-    this.changeNav.changeNav();
+    this.changeNav.changeNav(false);
   }
 
   ngOnInit(): void {
-    this.changeNav.changeNav();
+    this.changeNav.changeNav(false);
   }
 }

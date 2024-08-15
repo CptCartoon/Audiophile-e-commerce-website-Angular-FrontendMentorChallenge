@@ -13,9 +13,7 @@ import { CommonModule } from '@angular/common';
 export class AlsoLikeSectionComponent implements OnInit {
   @Input() product!: Product | undefined;
 
-  ngOnInit(): void {
-    console.log(this.product?.others);
-  }
+  ngOnInit(): void {}
 
   createImageLink(slug: string) {
     return '/assets/shared/desktop/image-' + slug + '.jpg';

@@ -7,19 +7,19 @@
     <p class="bodytext">You will receive an email confirmation shortly.</p>
     <div class="checkout-info">
       <div class="products">
-        <app-checkout-item></app-checkout-item>
+        <app-checkout-item [product]="products[0]"></app-checkout-item>
         <div class="other-items">
-          <p>and 2 other item(s)</p>
+          <p>and {{ totalCount }} other item(s)</p>
         </div>
       </div>
       <div class="grand-total">
         <div class="grand-total__content">
           <p class="bodytext">GRAND TOTAL</p>
-          <h6 class="h6">$ 5,446</h6>
+          <h6 class="h6">$ {{ totalPrice }}</h6>
         </div>
       </div>
     </div>
-    <app-button [btnLink]="''" btnLabel="BACK TO HOME"></app-button>
+    <app-button (click)="backToHome()" btnLabel="BACK TO HOME"></app-button>
   </div>
 </div>
-<div (click)="backToHome()" *ngIf="modal" class="backdrop"></div>
+<div *ngIf="modal" class="backdrop"></div>

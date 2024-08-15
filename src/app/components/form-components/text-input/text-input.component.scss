@@ -4,7 +4,12 @@ label {
   display: flex;
   flex-direction: column;
 
-  span {
+  .d-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  span.label {
     font-size: 13px;
     letter-spacing: -0.2px;
     font-weight: bold;
@@ -34,4 +39,15 @@ label {
 
 .input:user-invalid {
   border: 1px solid $invalidRed;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.invalid {
+  color: $invalidRed;
+  border-color: $invalidRed;
 }

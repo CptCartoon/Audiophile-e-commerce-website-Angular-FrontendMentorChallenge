@@ -15,8 +15,8 @@ export class ChangeNavService {
     this.productNavChange.next(this.productNav);
   }
 
-  changeNav() {
-    this.productNav = !this.productNav;
+  changeNav(value: boolean) {
+    this.productNav = value;
     this.productNavChange.next(this.productNav);
   }
 }

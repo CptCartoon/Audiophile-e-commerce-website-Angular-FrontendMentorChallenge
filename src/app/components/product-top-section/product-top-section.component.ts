@@ -1,4 +1,10 @@
-import { Component, Input } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { AddtocartCounterComponent } from '../../components/addtocart-counter/addtocart-counter.component';
 import { CartProduct, Product } from '../../interfaces/product';
@@ -12,7 +18,7 @@ import { CartService } from '../../services/cart.service';
   styleUrl: './product-top-section.component.scss',
   imports: [ButtonComponent, AddtocartCounterComponent, CommonModule],
 })
-export class ProductTopSectionComponent {
+export class ProductTopSectionComponent implements OnInit, OnChanges {
   @Input() newProduct: boolean = false;
   @Input() product!: Product | undefined;
 
@@ -20,9 +26,7 @@ export class ProductTopSectionComponent {
 
   cartProduct: CartProduct = {} as CartProduct;
 
-  constructor(private cartService: CartService) {}
-
-  ngOnInit(): void {
+  constructor(private cartService: CartService) {
     if (this.product) {
       this.cartProduct = {
         id: this.product.id,
@@ -32,10 +36,27 @@ export class ProductTopSectionComponent {
         count: 0,
       };
     }
-
     this.baseLink =
       '/assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
   }
+
+  ngOnInit(): void {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.product = this.product;
+    if (this.product) {
+      this.cartProduct = {
+        id: this.product.id,
+        name: this.product.name,
+        slug: this.product.slug,
+        price: this.product.price,
+        count: 0,
+      };
+    }
+    this.baseLink =
+      '/assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
+  }
+
   updateCount(value: number) {
     this.cartProduct.count = value;
   }

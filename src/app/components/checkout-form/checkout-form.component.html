@@ -8,18 +8,21 @@
           labelText="Name"
           placeholder="Alexei Ward"
           type="text"
+          [valid]="controls['name'].touched && controls['name'].invalid"
           formControlName="name"
         ></app-text-input>
         <app-text-input
           labelText="Email Address"
           placeholder="alexei@email.com"
           type="email"
+          [valid]="controls['email'].touched && controls['email'].invalid"
           formControlName="email"
         ></app-text-input>
         <app-text-input
           labelText="Phone"
           placeholder="+1 202-555-0136"
-          type="text"
+          type="number"
+          [valid]="controls['phone'].touched && controls['phone'].invalid"
           formControlName="phone"
         ></app-text-input>
       </div>
@@ -31,24 +34,28 @@
           labelText="Address"
           placeholder="1137 Williams Avenue"
           type="address"
+          [valid]="controls['address'].touched && controls['address'].invalid"
           formControlName="address"
         ></app-text-input>
         <app-text-input
           labelText="ZIP Code"
           placeholder="10001"
-          type="text"
+          type="number"
+          [valid]="controls['zipCode'].touched && controls['zipCode'].invalid"
           formControlName="zipCode"
         ></app-text-input>
         <app-text-input
           labelText="City"
           placeholder="New York"
           type="text"
+          [valid]="controls['city'].touched && controls['city'].invalid"
           formControlName="city"
         ></app-text-input>
         <app-text-input
           labelText="Country"
           placeholder="United States"
           type="text"
+          [valid]="controls['country'].touched && controls['country'].invalid"
           formControlName="country"
         ></app-text-input>
       </div>
@@ -63,6 +70,10 @@
               name="paymentMethod"
               value="eMoney"
               (click)="eMoneyChange(true)"
+              [valid]="
+                controls['paymentMethod'].touched &&
+                controls['paymentMethod'].invalid
+              "
               labelText="e-Money"
               formControlName="paymentMethod"
             ></app-radio-input>
@@ -70,6 +81,10 @@
               name="paymentMethod"
               value="cash"
               (click)="eMoneyChange(false)"
+              [valid]="
+                controls['paymentMethod'].touched &&
+                controls['paymentMethod'].invalid
+              "
               labelText="Cash on Delivery"
               formControlName="paymentMethod"
             ></app-radio-input>
@@ -79,13 +94,20 @@
           <app-text-input
             labelText="e-Money Number"
             placeholder="238521993"
-            type="text"
+            type="number"
+            [valid]="
+              controls['emoneyNumber'].touched &&
+              controls['emoneyNumber'].invalid
+            "
             formControlName="emoneyNumber"
           ></app-text-input>
           <app-text-input
             labelText="e-Money PIN"
             placeholder="6891"
-            type="text"
+            type="number"
+            [valid]="
+              controls['emoneyPIN'].touched && controls['emoneyPIN'].invalid
+            "
             formControlName="emoneyPIN"
           ></app-text-input>
         </ng-container>

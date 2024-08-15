@@ -1,5 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TextInputComponent } from '../form-components/text-input/text-input.component';
@@ -17,35 +22,69 @@ import { RadioInputComponent } from '../form-components/radio-input/radio-input.
     RadioInputComponent,
   ],
 })
-export class CheckoutFormComponent {
-  myForm: FormGroup;
+export class CheckoutFormComponent implements OnInit {
+  myForm!: FormGroup;
   eMoney: boolean = false;
 
-  constructor(private fb: FormBuilder) {
-    this.myForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-      zipCode: ['', Validators.required],
-      city: ['', Validators.required],
-      country: ['', Validators.required],
-      paymentMethod: ['', Validators.required],
-      emoneyNumber: [''],
-      emoneyPIN: [''],
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.initForm();
+  }
+
+  get controls() {
+    return this.myForm.controls;
+  }
+
+  initForm() {
+    this.myForm = new FormGroup({
+      name: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      email: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required, Validators.email],
+      }),
+      phone: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      address: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      zipCode: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      city: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      country: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      paymentMethod: new FormControl('', {
+        nonNullable: true,
+        validators: [Validators.required],
+      }),
+      emoneyNumber: new FormControl(''),
+      emoneyPIN: new FormControl(''),
     });
   }
 
   eMoneyChange(value: boolean) {
     this.eMoney = value;
     if (value) {
-      this.myForm.get('emoneyNumber')?.setValidators(Validators.required);
-      this.myForm.get('emoneyPIN')?.setValidators(Validators.required);
+      this.myForm.controls['emoneyNumber']?.setValidators(Validators.required);
+      this.myForm.controls['emoneyPIN']?.setValidators(Validators.required);
     } else {
-      this.myForm.get('emoneyNumber')?.clearValidators();
-      this.myForm.get('emoneyPIN')?.clearValidators();
+      this.myForm.controls['emoneyNumber']?.clearValidators();
+      this.myForm.controls['emoneyPIN']?.clearValidators();
     }
-    this.myForm.get('emoneyNumber')?.updateValueAndValidity();
-    this.myForm.get('emoneyPIN')?.updateValueAndValidity();
+    this.myForm.controls['emoneyNumber']?.updateValueAndValidity();
+    this.myForm.controls['emoneyPIN']?.updateValueAndValidity();
   }
 }

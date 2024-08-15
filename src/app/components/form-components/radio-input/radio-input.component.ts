@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { Component, Input, Optional, Self } from '@angular/core';
 import { ControlValueAccessor, NgControl } from '@angular/forms';
 
@@ -6,11 +7,13 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
   standalone: true,
   templateUrl: './radio-input.component.html',
   styleUrls: ['./radio-input.component.scss'],
+  imports: [CommonModule],
 })
 export class RadioInputComponent implements ControlValueAccessor {
   @Input() labelText!: string;
   @Input() name!: string;
   @Input() value!: string;
+  @Input() valid!: boolean;
 
   checked: boolean = false;
   onChange = (value: any) => {};

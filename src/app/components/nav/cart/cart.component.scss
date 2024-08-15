@@ -34,27 +34,16 @@
       display: flex;
       flex-direction: column;
       margin: 2rem 0;
-      max-height: 400px;
-      overflow-y: auto;
 
-      /* width */
-      ::-webkit-scrollbar {
-        width: 10px;
+      .bodytext {
+        text-align: center;
+        color: $darkerGrey;
       }
-
-      /* Track */
-      ::-webkit-scrollbar-track {
-        background: #f1f1f1;
-      }
-
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: #888;
-      }
-
-      /* Handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: #555;
+      app-cart-item {
+        display: block;
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
       }
     }
 

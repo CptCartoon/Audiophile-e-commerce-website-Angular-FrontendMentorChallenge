@@ -5,7 +5,7 @@
     </div>
     <div class="item-info">
       <div class="item-info__item-name">
-        <span class="bodytext">{{ product.name }}</span>
+        <span class="bodytext">{{ product.name | cutName }}</span>
       </div>
       <p class="bodytext price">$ {{ product.price }}</p>
     </div>

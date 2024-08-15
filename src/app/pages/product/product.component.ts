@@ -9,6 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { Product } from '../../interfaces/product';
 import { ChangeNavService } from '../../services/change-nav.service';
+import { GobackComponent } from '../../components/goback/goback.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-product',
@@ -22,6 +24,7 @@ import { ChangeNavService } from '../../services/change-nav.service';
     ProductGalleryComponent,
     ProductDescriptionComponent,
     ProductTopSectionComponent,
+    GobackComponent,
   ],
 })
 export class ProductComponent implements OnInit {
@@ -29,23 +32,33 @@ export class ProductComponent implements OnInit {
   productName!: string;
   product!: Product | undefined;
   productNav: boolean = true;
-
+  sub$!: any;
   constructor(
     private route: ActivatedRoute,
     private router: Router,
     private data: DataService,
-    private changeNav: ChangeNavService
+    private changeNav: ChangeNavService,
+    public location: Location
   ) {
-    this.route.params.subscribe(() => {
+    this.sub$ = this.route.params.subscribe(() => {
       this.productId = this.route.snapshot.params['id'];
       this.product = this.data.getProductById(parseInt(this.productId));
     });
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+    this.changeNav.changeNav(true);
   }
 
   ngOnInit(): void {
     if (!this.productId && this) {
       this.router.navigate(['']);
     }
-    this.changeNav.changeNav();
+    this.product = this.data.getProductById(parseInt(this.productId));
+    this.changeNav.changeNav(true);
+  }
+
+  ngOnDestroy() {
+    this.sub$.unsubscribe();
   }
 }

@@ -1,5 +1,5 @@
-<label class="label-radio">
-  {{ labelText }}
+<label class="label-radio" [ngClass]="{ invalid: valid }">
+  <span class="label" [ngClass]="{ invalid: valid }">{{ labelText }}</span>
   <input
     class="input-radio"
     type="radio"

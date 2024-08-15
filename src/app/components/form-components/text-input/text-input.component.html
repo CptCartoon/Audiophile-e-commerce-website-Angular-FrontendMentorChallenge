@@ -1,6 +1,12 @@
 <label for="">
-  <span>{{ labelText }}</span>
+  <span class="d-flex">
+    <span class="label">{{ labelText }}</span>
+    <span class="label" [ngClass]="{ invalid: valid }" *ngIf="valid"
+      >Invalid</span
+    >
+  </span>
   <input
+    [ngClass]="{ invalid: valid }"
     class="input"
     [placeholder]="placeholder"
     [type]="type"

@@ -93,10 +93,12 @@ export class CartService {
 
   clearCart() {
     this.cart = [];
-    this.saveCartToLocalStorage();
     this.cartChange.next(this._getCart);
     this.totalPrice = 0;
     this.totalPriceChange.next(this._getTotalPrice);
+    this.totalCount = 0;
+    this.totalCountChange.next(this._getTotalCount);
+    this.saveCartToLocalStorage();
   }
 
   private saveCartToLocalStorage() {

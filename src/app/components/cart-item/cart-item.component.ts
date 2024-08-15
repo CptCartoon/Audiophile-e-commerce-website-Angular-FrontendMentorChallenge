@@ -2,11 +2,12 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AddtocartCounterComponent } from '../addtocart-counter/addtocart-counter.component';
 import { CartProduct } from '../../interfaces/product';
 import { CartService } from '../../services/cart.service';
+import { CutNamePipe } from '../../pipes/cut-name.pipe';
 
 @Component({
   selector: 'app-cart-item',
   standalone: true,
-  imports: [AddtocartCounterComponent],
+  imports: [AddtocartCounterComponent, CutNamePipe],
   templateUrl: './cart-item.component.html',
   styleUrl: './cart-item.component.scss',
 })
