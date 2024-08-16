@@ -15,6 +15,6 @@ export class ProductGalleryComponent implements OnInit {
 
   ngOnInit(): void {
     this.baseLink =
-      '/assets/product-' + this.product?.slug + '/desktop/image-gallery-';
+      'assets/product-' + this.product?.slug + '/desktop/image-gallery-';
   }
 }

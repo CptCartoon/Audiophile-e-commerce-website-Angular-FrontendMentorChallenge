@@ -16,6 +16,6 @@ export class AlsoLikeSectionComponent implements OnInit {
   ngOnInit(): void {}
 
   createImageLink(slug: string) {
-    return '/assets/shared/desktop/image-' + slug + '.jpg';
+    return 'assets/shared/desktop/image-' + slug + '.jpg';
   }
 }

@@ -15,6 +15,6 @@ export class CheckoutItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.imgLink =
-      '/assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
+      'assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
   }
 }

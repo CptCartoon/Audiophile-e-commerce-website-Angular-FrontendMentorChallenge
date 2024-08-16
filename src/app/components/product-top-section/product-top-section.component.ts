@@ -37,7 +37,7 @@ export class ProductTopSectionComponent implements OnInit, OnChanges {
       };
     }
     this.baseLink =
-      '/assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
+      'assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
   }
 
   ngOnInit(): void {}
