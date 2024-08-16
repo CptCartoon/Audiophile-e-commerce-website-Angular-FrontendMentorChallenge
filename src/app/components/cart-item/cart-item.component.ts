@@ -19,7 +19,7 @@ export class CartItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.imgLink =
-      '/assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
+      'assets/product-' + this.product?.slug + '/desktop/image-product.jpg';
   }
 
   updateCount(value: number, id: number) {

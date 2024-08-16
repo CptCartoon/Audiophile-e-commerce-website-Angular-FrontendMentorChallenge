@@ -18,7 +18,7 @@ export class CategoryProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.baseLink =
-      '/assets/product-' +
+      'assets/product-' +
       this.product.slug +
       '/desktop/image-category-page-preview.jpg';
   }
