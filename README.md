@@ -4,6 +4,10 @@ This is a solution to the [Audiophile e-commerce website challenge on Frontend M
 
 ## Overview
 
+### Links
+
+- Live Site URL: [Live Server Preview](https://cptcartoon.github.io/Audiophile-e-commerce-website-Angular-FrontendMentorChallenge)
+
 ### The challenge
 
 Users should be able to:
@@ -23,10 +27,6 @@ Users should be able to:
 ### Screenshot
 
 ![](./screenshot.jpg)
-
-### Links
-
-- Live Site URL: [Live Server Preview](https://cptcartoon.github.io/Audiophile-e-commerce-website-Angular-FrontendMentorChallenge)
 
 ### Built with
 
